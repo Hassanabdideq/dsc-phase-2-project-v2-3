@@ -56,11 +56,16 @@ To streamline the analysis, specific columns such as date, view, sqft_above, sqf
 
 ## Conclusions
 The dataset contains information about house prices, with a diverse range of prices from $78,000 to $7,700,000. The mean and median prices are close, suggesting a roughly symmetric distribution, but with considerable variability due to some extremely high-priced houses.
+
 The analysis of the "grade" and "condition" features provides insights into the quality and condition of houses in the dataset. Most houses fall within the average quality and condition categories. It is essential to consider the condition of the house as it can significantly impact its price and other characteristics
+
 Bivariate analysis shows that houses with a waterfront view tend to have a wider price distribution, with higher upper quartile prices, compared to houses without a waterfront view.
+
 The multivariate analysis using linear regression models reveals that features like grade, bathrooms, and square footage of living space (sqft_living) have a significant impact on the price of a house. Model 2, which includes these features, performs better in terms of R-squared and is free from multicollinearity issues.
 The residuals of Model 2 appear to follow a normal distribution, which is essential for the validity of linear regression analysis.
+
 Two models were trained: a linear regression model and a random forest model. The linear regression model achieved good results with low Mean Squared Error and high R-squared values, indicating its strong predictive performance. The random forest model performed even better on the training set
+
 Feature selection was done based on correlations with the target variable (price), and multicollinearity was addressed by removing one of the correlated features. The analysis and modeling suggest that the price of a house can be predicted effectively using features such as grade, bathrooms, and square footage of living space. The linear regression model provides a good baseline for prediction, while more complex models like random forest may be used for even better results
 
 ## Recommendations
