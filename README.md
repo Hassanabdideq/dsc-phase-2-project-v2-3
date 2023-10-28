@@ -1,4 +1,8 @@
-# Overview 
+# Predicting King County House Prices with Multiple Linear Regression
+
+> Image
+
+# Project Overview 
 The aim of this project is to develop a Multiple Linear Regression Model to accurately predict the sale prices of houses in King County. Through careful data analysis and exploratory data analysis techniques, we will preprocess and clean the dataset to create a data frame for regression modeling. By analyzing key features such as square footage, number of bedrooms, location(waterfront or not), and more, we aim to uncover valuable insights that influence house prices.
 
 # Business Understanding
@@ -11,7 +15,7 @@ Gaining insight into the local housing market dynamics in the dataset such as th
 # Main objective
 * To develop a Multiple Linear Regression Model to accurately predict the sale prices of houses in King County
   
-# Specif objective 
+# Specific objective 
 * Which features are identified as relevant for the Multiple Linear Regression Model, considering factors like size, layout, condition, and location?
 * How do house prices vary concerning different features, such as square footage, the number of bedrooms, and location?
 * How is the initial Multiple Linear Regression Model developed as a baseline?
@@ -20,39 +24,50 @@ Gaining insight into the local housing market dynamics in the dataset such as th
 
 # Data understanding
 The King County House Sales project dataset is stored in a file named kc_house_data.csv, accompanied by column descriptions available in column_names.md. It contains information relevant to house sales in King County, providing a comprehensive set of features. 
-# Column Names and Descriptions for King County Data Set
-* `id` - Unique identifier for a house
-* `date` - Date house was sold
-* `price` - Sale price (prediction target)
-* `bedrooms` - Number of bedrooms
-* `bathrooms` - Number of bathrooms
-* `sqft_living` - Square footage of living space in the home
-* `sqft_lot` - Square footage of the lot
-* `floors` - Number of floors (levels) in house
-* `waterfront` - Whether the house is on a waterfront
-  * Includes Duwamish, Elliott Bay, Puget Sound, Lake Union, Ship Canal, Lake Washington, Lake Sammamish, other lake, and river/slough waterfronts
-* `view` - Quality of view from house
-  * Includes views of Mt. Rainier, Olympics, Cascades, Territorial, Seattle Skyline, Puget Sound, Lake Washington, Lake Sammamish, small lake / river / creek, and other
-* `condition` - How good the overall condition of the house is. Related to maintenance of house.
-  * See the [King County Assessor Website](https://info.kingcounty.gov/assessor/esales/Glossary.aspx?type=r) for further explanation of each condition code
-* `grade` - Overall grade of the house. Related to the construction and design of the house.
-  * See the [King County Assessor Website](https://info.kingcounty.gov/assessor/esales/Glossary.aspx?type=r) for further explanation of each building grade code
-* `sqft_above` - Square footage of house apart from basement
-* `sqft_basement` - Square footage of the basement
-* `yr_built` - Year when house was built
-* `yr_renovated` - Year when house was renovated
-* `zipcode` - ZIP Code used by the United States Postal Service
-* `lat` - Latitude coordinate
-* `long` - Longitude coordinate
-* `sqft_living15` - The square footage of interior housing living space for the nearest 15 neighbors
-* `sqft_lot15` - The square footage of the land lots of the nearest 15 neighbors
 
-To streamline the analysis, specific columns such as date, view, sqft_above, sqft_basement, yr_renovated, zip code, lat, long, sqft_living15, and sqft_lot15 can be excluded based on project recommendations. The dataset is the foundation for the primary project goal: regression modeling to predict house prices. Stakeholders are expected to be identified, and the analysis should address pertinent business problems, possibly involving advice for homeowners on how renovations impact home value. The modeling approach centers on linear regression, with a focus on building iterative models. The iterative process involves starting with a basic model, evaluating its performance, and then refining or iterating based on those evaluations. Evaluation metrics for overall model performance are required, and the project encourages the exploration of additional statistical techniques beyond linear regression if they contribute value. Clear documentation, transparency in decision-making, and, optionally, data visualization and analysis are emphasized for effective communication and reproducibility throughout the project.
+1. ## Price Distribution
 
+> Image
 
+2. ## Vitualizing categorical data
 
+> Image of conditions with high correlation in relation to price.
+
+3. ## Multicollinearity
+
+Considering the presence of multicollinearity between 'sqft_above' and 'sqft_living', and recognizing that 'sqft_living' exhibits the highest correlation with our target variable, we have decided to drop the 'sqft_above' feature to mitigate the effects of multicollinearity in our analysis." 
+
+> Heat map image.
+
+### Modelling.
+
+#### Multiple linear regression with features strongly correlating price
+
+Multiple linear regression incorporating the top four variables showing the strongest correlations with price
+
+> Image
+
+#### Multiple linear regression with features strongly correlating price without multicollinearity
+
+> Image
+
+4. ## Residuals Normality Assumption
+
+In this step, we use a QQ-plot to verify if the residuals in the multiple linear regression model adhere to a normal distribution. This is essential for ensuring the validity of regression analysis.
+
+> Image
+
+5. ## Training model with random forest
+
+Random Forest - Mean Squared Error Train: 0.01
+Random Forest - Mean Squared Error Test: 0.08
+Random Forest - R-Squared Train: 0.96
+Random Forest - R-Squared Test: 0.71
 
 # Recommendation and Conclusions
+## Recommendation.
+
+A larger dataset is needed for a thorough analysis of these unique qualities.
 
 ## Conclusions
 The dataset contains information about house prices, with a diverse range of prices from $78,000 to $7,700,000. The mean and median prices are close, suggesting a roughly symmetric distribution, but with considerable variability due to some extremely high-priced houses.
@@ -67,7 +82,3 @@ The residuals of Model 2 appear to follow a normal distribution, which is essent
 Two models were trained: a linear regression model and a random forest model. The linear regression model achieved good results with low Mean Squared Error and high R-squared values, indicating its strong predictive performance. The random forest model performed even better on the training set
 
 Feature selection was done based on correlations with the target variable (price), and multicollinearity was addressed by removing one of the correlated features. The analysis and modeling suggest that the price of a house can be predicted effectively using features such as grade, bathrooms, and square footage of living space. The linear regression model provides a good baseline for prediction, while more complex models like random forest may be used for even better results
-
-## Recommendations
-
-
