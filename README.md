@@ -27,7 +27,7 @@ The King County House Sales project dataset is stored in a file named kc_house_d
 
 ![Alt text](images/price_distribution.png)
 
-## Vitualizing categorical data
+## Visualizing categorical data
 
 Conditions with high correlation in relation to price.
 
