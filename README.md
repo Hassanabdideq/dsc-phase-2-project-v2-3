@@ -1,7 +1,5 @@
 # Predicting King County House Prices with Multiple Linear Regression
 
-> Image
-
 # Project Overview 
 The aim of this project is to develop a Multiple Linear Regression Model to accurately predict the sale prices of houses in King County. Through careful data analysis and exploratory data analysis techniques, we will preprocess and clean the dataset to create a data frame for regression modeling. By analyzing key features such as square footage, number of bedrooms, location(waterfront or not), and more, we aim to uncover valuable insights that influence house prices.
 
@@ -15,7 +13,7 @@ Gaining insight into the local housing market dynamics in the dataset such as th
 # Main objective
 * To develop a Multiple Linear Regression Model to accurately predict the sale prices of houses in King County
   
-# Specific objective 
+# Specific objective
 * Which features are identified as relevant for the Multiple Linear Regression Model, considering factors like size, layout, condition, and location?
 * How do house prices vary concerning different features, such as square footage, the number of bedrooms, and location?
 * How is the initial Multiple Linear Regression Model developed as a baseline?
@@ -25,19 +23,21 @@ Gaining insight into the local housing market dynamics in the dataset such as th
 # Data understanding
 The King County House Sales project dataset is stored in a file named kc_house_data.csv, accompanied by column descriptions available in column_names.md. It contains information relevant to house sales in King County, providing a comprehensive set of features. 
 
-1. ## Price Distribution
+## Price Distribution
 
-> Image
+![Alt text](images/price_distribution.png)
 
-2. ## Vitualizing categorical data
+## Vitualizing categorical data
 
-> Image of conditions with high correlation in relation to price.
+Conditions with high correlation in relation to price.
 
-3. ## Multicollinearity
+![Alt text](images/vitualization.png)
+
+## Multicollinearity
 
 Considering the presence of multicollinearity between 'sqft_above' and 'sqft_living', and recognizing that 'sqft_living' exhibits the highest correlation with our target variable, we have decided to drop the 'sqft_above' feature to mitigate the effects of multicollinearity in our analysis." 
 
-> Heat map image.
+![Alt text](images/heatmap.png)
 
 ### Modelling.
 
@@ -45,19 +45,19 @@ Considering the presence of multicollinearity between 'sqft_above' and 'sqft_liv
 
 Multiple linear regression incorporating the top four variables showing the strongest correlations with price
 
-> Image
+![Alt text](images/high_corr_model.png)
 
 #### Multiple linear regression with features strongly correlating price without multicollinearity
 
-> Image
+![Alt text](images/without_multicoll.png)
 
-4. ## Residuals Normality Assumption
+## Residuals Normality Assumption
 
 In this step, we use a QQ-plot to verify if the residuals in the multiple linear regression model adhere to a normal distribution. This is essential for ensuring the validity of regression analysis.
 
-> Image
+![Alt text](images/qq_plot.png)
 
-5. ## Training model with random forest
+## Training model with random forest
 
 Random Forest - Mean Squared Error Train: 0.01
 Random Forest - Mean Squared Error Test: 0.08
