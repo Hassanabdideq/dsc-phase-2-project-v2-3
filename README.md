@@ -60,8 +60,11 @@ In this step, we use a QQ-plot to verify if the residuals in the multiple linear
 ## Training model with random forest
 
 Random Forest - Mean Squared Error Train: 0.01
+
 Random Forest - Mean Squared Error Test: 0.08
+
 Random Forest - R-Squared Train: 0.96
+
 Random Forest - R-Squared Test: 0.71
 
 # Recommendation and Conclusions
